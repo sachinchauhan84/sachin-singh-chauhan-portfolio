@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGraduationCap, FaBullseye, FaGithub, FaLinkedin, FaGlobe } from "react-icons/fa";
-import aboutImage from "../assets/about.jpg";
+import aboutImage from "../assets/portfolio-illutration.avif";
 
 const About = () => {
   const handleContactClick = () => {
