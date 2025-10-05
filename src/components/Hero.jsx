@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Hero = () => {
   const name = "Sachin Singh Chauhan";
   const [displayedName, setDisplayedName] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // Typing effect for name
   useEffect(() => {
@@ -27,7 +29,7 @@ const Hero = () => {
       id="hero"
       className="relative h-screen flex flex-col items-center justify-center text-center bg-black text-white px-6"
     >
-      {/* Static Navbar */}
+      {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-md z-50 shadow-md">
         <div className="container mx-auto px-6 py-3 flex justify-between items-center">
           {/* Logo / Name */}
@@ -35,8 +37,8 @@ const Hero = () => {
             Sachin_Portfolio
           </div>
 
-          {/* Navigation Links */}
-          <div className="flex gap-6">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-6">
             {sections.map((sec) => (
               <a
                 key={sec}
@@ -47,13 +49,43 @@ const Hero = () => {
               </a>
             ))}
           </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden text-yellow-400 cursor-pointer text-2xl">
+            {menuOpen ? (
+              <FaTimes onClick={() => setMenuOpen(false)} />
+            ) : (
+              <FaBars onClick={() => setMenuOpen(true)} />
+            )}
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-black/95 text-center py-4 space-y-3"
+          >
+            {sections.map((sec) => (
+              <a
+                key={sec}
+                href={`#${sec}`}
+                onClick={() => setMenuOpen(false)}
+                className="block text-white font-medium transition hover:text-yellow-400"
+              >
+                {sec.charAt(0).toUpperCase() + sec.slice(1)}
+              </a>
+            ))}
+          </motion.div>
+        )}
       </nav>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
 
-      {/* Content */}
+      {/* Hero Content */}
       <motion.div
         className="relative z-10"
         initial={{ opacity: 0, y: 30 }}
