@@ -92,7 +92,7 @@ const Contact = () => {
           transition={{ delay: 0.8, duration: 0.8 }}
         >
           <a
-            href="https://www.linkedin.com/in/sachinchauhan"
+            href="www.linkedin.com/in/𝐒𝐚𝐜𝐡𝐢𝐧-𝐒𝐢𝐧𝐠𝐡-𝐂𝐡𝐚𝐮𝐡𝐚𝐧-1254a9252"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-500 transition"

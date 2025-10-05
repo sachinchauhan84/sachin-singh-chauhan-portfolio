@@ -55,7 +55,7 @@ const About = () => {
             <a href="https://github.com/sachinchauhan84" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
               <FaGithub />
             </a>
-            <a href="https://www.linkedin.com/in/sachinchauhan" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition">
+            <a href="www.linkedin.com/in/𝐒𝐚𝐜𝐡𝐢𝐧-𝐒𝐢𝐧𝐠𝐡-𝐂𝐡𝐚𝐮𝐡𝐚𝐧-1254a9252" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition">
               <FaLinkedin />
             </a>
           </div>
